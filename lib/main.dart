@@ -1,20 +1,18 @@
 import 'package:flutter/material.dart';
+import 'screens/home_screen.dart';
 
-void main() {
-  runApp(const MainApp());
-}
+void main() => runApp(const AnimationApp());
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class AnimationApp extends StatelessWidget {
+  const AnimationApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp(
+      title: 'Animation Playground',
+      theme: ThemeData.light(useMaterial3: true),
+      home: const HomeScreen(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
