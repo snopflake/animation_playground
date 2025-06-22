@@ -132,13 +132,18 @@ class _ImplicitPlaygroundState extends State<ImplicitPlayground> {
 
             const SizedBox(height: 40),
 
-            ElevatedButton(
-              onPressed: () => setState(() => toggled = !toggled),
-              child: const Text('🔁 Toggle Semua Animasi'),
-            ),
           ],
         ),
       ),
+
+      // Toggle Button
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => setState(() => toggled = !toggled),
+        label: const Text('Toggle'),
+        icon: const Icon(Icons.play_arrow_rounded),
+        backgroundColor: Colors.blueGrey,
+      ),
+
     );
   }
 
