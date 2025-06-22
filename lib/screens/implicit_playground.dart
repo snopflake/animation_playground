@@ -1,3 +1,4 @@
+import 'package:animation_playground/widgets/glass_card.dart';
 import 'package:flutter/material.dart';
 
 class ImplicitPlayground extends StatefulWidget {
@@ -18,14 +19,18 @@ class _ImplicitPlaygroundState extends State<ImplicitPlayground> {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            _buildLabel('AnimatedContainer + easeInOut'),
-            AnimatedContainer(
-              duration: const Duration(milliseconds: 600),
-              curve: Curves.easeInOut,
-              width: toggled ? 200 : 100,
-              height: 100,
-              color: toggled ? Colors.blue : Colors.grey,
-              child: const Center(child: Text("AnimatedContainer")),
+            GlassCard(
+              label: 'AnimatedContainer + easeInOut',
+              child: (
+                AnimatedContainer(
+                  duration: const Duration(milliseconds: 600),
+                  curve: Curves.easeInOut,
+                  width: toggled ? 200 : 100,
+                  height: 100,
+                  color: toggled ? Colors.blue : Colors.grey,
+                  child: const Center(child: Text("AnimatedContainer")),
+                )
+              ),
             ),
             const SizedBox(height: 20),
 

@@ -10,7 +10,7 @@ class AnimationApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Animation Playground',
-      theme: ThemeData.light(useMaterial3: true),
+      theme: ThemeData.dark(useMaterial3: true),
       home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
