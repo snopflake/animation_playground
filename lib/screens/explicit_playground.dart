@@ -116,6 +116,8 @@ class _ExplicitPlaygroundState extends State<ExplicitPlayground>
 
             const SizedBox(height: 20),
 
+            // 2 Contoh di bawah ini udh mulai implement AnimatedBuilder -------------
+
             GlassCard(
               label: 'AnimatedBuilder (Rotate + Scale)',
               child: AnimatedBuilder(
@@ -132,6 +134,37 @@ class _ExplicitPlaygroundState extends State<ExplicitPlayground>
                 child: const Icon(Icons.flutter_dash, size: 60, color: Colors.blueAccent),
               ),
             ),
+
+            const SizedBox(height: 20),
+
+            GlassCard(
+              label: 'Fill From Top (AnimatedBuilder)',
+              child: SizedBox(
+                height: 100,
+                width: double.infinity,
+                child: Stack(
+                  alignment: Alignment.bottomCenter,
+                  children: [
+
+                    Container(color: Colors.blue.shade700),
+
+                    AnimatedBuilder(
+                      animation: _controller,
+                      builder: (context, child) {
+                        return Align(
+                          alignment: Alignment.topCenter,
+                          child: Container(
+                            height: 100 * _controller.value, // Tinggi isi kuning (100 biar full)
+                            color: Colors.amber,
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
 
             const SizedBox(height: 100),
           ],
